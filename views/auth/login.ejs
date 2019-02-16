@@ -1,0 +1,29 @@
+<%- include('../includes/head.ejs') %>
+
+</head>
+
+<body>
+<%- include('../includes/navigation.ejs') %>
+
+<main>
+
+    <h1>Login Page</h1>
+
+    <div class="main_login">
+        <form action="/admin/login" method="post" class="login_form">
+            <div class="login_form_inputs">
+
+                <label class="label" for="username">Username</label>
+                <input type="text" id="username" name="username" class="username_input" placeholder="Jon@Doe.com">
+
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" name="password" class="password_input" placeholder="******">
+
+                <input type="submit" value="Login" class="btn btn_submit">
+
+            </div>
+        </form>
+    </div>
+
+</main>
+<%- include('../includes/end.ejs') %>

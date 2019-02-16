@@ -1,0 +1,37 @@
+<%- include('../includes/head.ejs') %>
+
+</head>
+
+<body>
+<%- include('../includes/navigation.ejs') %>
+
+<main>
+
+    <div class="main_signup">
+        <form action="/admin/signup" method="post" class="signup_form">
+            <div class="signup_form_inputs">
+
+                <label for=name" class="label">Name</label>
+                <input type="text" id="name" name="name" class="name_input" placeholder="Full Name">
+
+                <label for="email" class="label">E-Mail</label>
+                <input type="text" id="email" name="email" class="email_input" placeholder="Jon@Doe.com">
+
+                <label for="username" class="label">Username</label>
+                <input type="text" id="username" name="username" class="username_input" placeholder="Jon@Doe.com">
+
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" name="password" class="password_input" placeholder="******">
+
+                <label for="confirmPassword" class="label">Confirm Password</label>
+                <input type="Password" id="confirmPassword" name="confirmPassword" class="password_input"
+                       placeholder="******">
+
+                <input type="submit" value="Sign Up" class="btn btn_submit">
+
+            </div>
+        </form>
+    </div>
+
+</main>
+<%- include('../includes/end.ejs') %>
