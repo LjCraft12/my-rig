@@ -6,9 +6,11 @@ module.exports = {
     },
     database: {
         databaseConnectionUrl: `mongodb+srv://inventoryApi:onClickAdmin2018@university-brzxn.mongodb.net/${dbName}?retryWrites=true`,
-        // mongoDBSession: {
-        //     connect: `mongodb+srv://inventoryApi:onClickAdmin2018@university-brzxn.mongodb.net/${dbName}`,
-        //     secret: 'CBAB340E4E'
-        // }
+        mongoDBSession: {
+            connect: `mongodb+srv://inventoryApi:onClickAdmin2018@university-brzxn.mongodb.net/${dbName}`,
+        }
+    },
+    sessionOptions: {
+        secret: 'CBAB340E4E'
     }
 };

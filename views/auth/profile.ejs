@@ -7,6 +7,69 @@
 
 <main>
     <h1>Welcome to your profile</h1>
+    <h3>Your details</h3>
+    <ul>
+        <li><%= user.username %></li>
+        <li><%= user.firstName %></li>
+        <li><%= user.lastName %></li>
+        <li><%= user.joined %></li>
+        <li><%= user.email %></li>
+        <li><%= user.lastLogin %></li>
+    </ul>
 
+    <form action="/profile" method="post">
+        <div class="signup_form_inputs">
+            <h3>Hide this form in CSS Maybe make it a pop up modal</h3>
+            <label for="firstName" class="label">First Name</label>
+            <input type="text" id="firstName" name="firstName" class="name_input" placeholder="First Name">
+
+            <label for="lastName" class="label">Last Name</label>
+            <input type="text" id="lastName" name="lastName" class="name_input" placeholder="Last Name">
+
+
+            <label for="email" class="label">E-Mail</label>
+            <input type="email" id="email" name="email" class="email_input" placeholder="Jon@Doe.com">
+
+            <label for="username" class="label">Username</label>
+            <input type="text" id="username" name="username" class="username_input" placeholder="Jon@Doe.com">
+
+            <label for="password" class="label">Password</label>
+            <input type="password" id="password" name="password" class="password_input" placeholder="******">
+
+            <label for="confirmPassword" class="label">Confirm Password</label>
+            <input type="Password" id="confirmPassword" name="confirmPassword" class="password_input"
+                   placeholder="******">
+
+            <label for="country" class="label">Country</label>
+            <input type="text" id="country" name="country" class="name_input" placeholder="Country">
+
+            <label for="city" class="label">City</label>
+            <input type="text" id="city" name="city" class="name_input" placeholder="city">
+
+            <label for="dob" class="label">Date Of Birth</label>
+            <input type="text" id="dob" name="dob" class="name_input" placeholder="dob">
+
+            <label for="facebook" class="label">Facebook</label>
+            <input type="text" id="facebook" name="facebook" class="name_input" placeholder="facebook">
+
+            <label for="instagram" class="label">Instagram</label>
+            <input type="text" id="instagram" name="instagram" class="name_input" placeholder="instagram">
+
+            <label for="linkedin" class="label">LinkedIn</label>
+            <input type="text" id="linkedin" name="linkedin" class="name_input" placeholder="linkedin">
+
+            <label for="occupation" class="label">Occupation</label>
+            <input type="text" id="occupation" name="occupation" class="name_input" placeholder="occupation">
+
+            <label for="website" class="label">Website</label>
+            <input type="text" id="website" name="website" class="name_input" placeholder="website">
+
+            <label for="skills" class="label">Skill Set</label>
+            <input type="text" id="skills" name="skills" class="name_input" placeholder="skills">
+
+            <input type="submit" value="Sign Up" class="btn btn_submit">
+
+        </div>
+    </form>
 </main>
 <%- include('../includes/end.ejs') %>

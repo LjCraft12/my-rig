@@ -6,13 +6,19 @@
             <a href="/admin/signup">Sign Up</a>
         </li>
 
+        <% if (!isAuthenticated) { %>
         <li class="nav_list__item">
             <a href="/admin/login">Login</a>
         </li>
-
+        <% } else { %>
         <li class="nav_list__item">
             <a href="/admin/profile">Profile</a>
         </li>
-
+            <div>
+                <form action="/admin/logout" method="post">
+                    <button type="submit">Logout</button>
+                </form>
+            </div>
+        <% } %>
     </ul>
 </nav>

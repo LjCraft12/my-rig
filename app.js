@@ -3,15 +3,24 @@ const express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     path = require('path'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    session = require('express-session'),
+    MongoDBStore = require('connect-mongodb-session')(session);
+
 
 // Custom import
-const {server, database} = require('./utilities/connections'),
+const {server, database, sessionOptions} = require('./utilities/connections'),
     port = server.port,
     mongooseConnection = database.databaseConnectionUrl,
+    DB_SESSION_URI = database.mongoDBSession.connect,
     userRoutes = require('./routes/userRoutes'),
     authRoutes = require('./routes/authRoutes'),
     User = require('./models/userModel');
+
+const store = new MongoDBStore({
+    uri: DB_SESSION_URI,
+    collection: 'sessions'
+});
 
 // Setting ejs as the view engine
 app.set('view engine', 'ejs');
@@ -23,17 +32,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 // Pointing to a static public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use((req, res, next) => {
-//     User.findById('5c68765e95a6011b8c6a654f')
-//         .then(user => {
-//             console.log('User found');
-//             req.user = user;
-//             next()
-//         })
-//         .catch(err => {
-//             console.log(`You have an error: ${err}`);
-//         })
-// });
+// Express Session
+app.use(session({
+    secret: sessionOptions.secret,
+    resave: false,
+    saveUninitialized: false,
+    store: store
+}));
 
 // Routing
 app.use('/admin', authRoutes);

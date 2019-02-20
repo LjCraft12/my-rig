@@ -2,17 +2,23 @@ const mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    name: {
+    firstName: {
+        type: String,
+        required: true
+    },
+    lastName: {
         type: String,
         required: true
     },
     username: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,
@@ -33,17 +39,17 @@ const userSchema = new Schema({
     userMessages: {
         type: Schema.Types.ObjectId,
         ref: 'Messages',
-        required: true
+        required: false
     },
     userPost: {
         type: mongoose.Types.ObjectId,
         ref: 'Post',
-        required: true
+        required: false
     },
     comments: {
         type: mongoose.Types.ObjectId,
         ref: 'Comment',
-        required: true
+        required: false
     },
     country: {
         type: String,
