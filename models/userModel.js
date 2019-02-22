@@ -36,6 +36,11 @@ const userSchema = new Schema({
         type: String,
         required: false
     },
+    lastLogout: {
+        type: String,
+        required: false,
+        default: 'This user is new and hasn\'t logged out yet'
+    },
     userMessages: {
         type: Schema.Types.ObjectId,
         ref: 'Messages',

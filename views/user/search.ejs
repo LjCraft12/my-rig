@@ -6,20 +6,32 @@
 <%- include('../includes/navigation.ejs') %>
 
 <main>
-    <% if (post.length > 0) { %>
-        <h1>Here are <%= query + '\'s' %> posts</h1>
-        <div id="post_container">
-            <% for (let userPost of post) { %>
-                <div id="post_card">
-                    <div id="post_title"> <%= userPost.postTitle %> by, <%= userPost.username %> posted
-                        on <%= userPost.posted %> </div>
-                    <div id="post_description"><%= userPost.postDescription %></div>
-                    <div id="post_images"><%= userPost.postImage %></div>
+    <% if (user) { %>
+        <h1>Here are <%= query %> public details</h1>
+        <div id="user_container">
+
+            <div id="user_card">
+                <div id="user_name"> <%= user.firstName %> <%= user.lastName %>
                 </div>
-            <% } %>
+            </div>
         </div>
+        <% if (post.length > 0) { %>
+            <h1>Here are <%= query + '\'s' %> posts</h1>
+            <div id="post_container">
+                <% for (let userPost of post) { %>
+                    <div id="post_card">
+                        <div id="post_title"> <%= userPost.postTitle %> by, <%= userPost.username %> posted
+                            on <%= userPost.posted %> </div>
+                        <div id="post_description"><%= userPost.postDescription %></div>
+                        <div id="post_images"><%= userPost.postImage %></div>
+                    </div>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h1>This user hasn't made any post yet</h1>
+        <% } %>
     <% } else { %>
-        <h1>This user hasn't made any post yet</h1>
+        <h1>No user found</h1>
     <% } %>
 </main>
 <%- include('../includes/end.ejs') %>

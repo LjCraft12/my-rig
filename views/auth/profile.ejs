@@ -10,12 +10,13 @@
     <h1>Welcome to your profile</h1>
     <h3>Your details</h3>
     <ul>
-        <li><%= user.username %></li>
-        <li><%= user.firstName %></li>
-        <li><%= user.lastName %></li>
-        <li><%= user.joined %></li>
-        <li><%= user.email %></li>
-        <li><%= user.lastLogin %></li>
+        <li>Username: <%= user.username %></li>
+        <li>first name: <%= user.firstName %></li>
+        <li>Last name: <%= user.lastName %></li>
+        <li>Joined: <%= user.joined %></li>
+        <li>E-mail: <%= user.email %></li>
+        <li>Last login time: <%= user.lastLogin %></li>
+        <li>Last logout time: <%= user.lastLogout %></li>
     </ul>
 
     <label for="edit_profile" class="edit_profile__label">Edit Profile</label>
