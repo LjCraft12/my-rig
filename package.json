@@ -1,0 +1,39 @@
+{
+  "name": "my-rig",
+  "version": "1.0.0",
+  "description": "Site based on custom computer builds and forum talks",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "connect-mongodb-session": "^2.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "moment": "^2.24.0",
+    "mongoose": "^5.4.13",
+    "multer": "^1.4.1",
+    "nodemon": "^1.18.10",
+    "uglify-js": "^3.4.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LjCraft12/my-rig.git"
+  },
+  "keywords": [
+    "Computers",
+    "custom",
+    "pc"
+  ],
+  "author": "Perry Craft",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LjCraft12/my-rig/issues"
+  },
+  "homepage": "https://github.com/LjCraft12/my-rig#readme"
+}
