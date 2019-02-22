@@ -1,0 +1,25 @@
+<%- include('../includes/head.ejs') %>
+
+</head>
+
+<body>
+<%- include('../includes/navigation.ejs') %>
+
+<main>
+    <% if (post.length > 0) { %>
+        <h1>Here are <%= query + '\'s' %> posts</h1>
+        <div id="post_container">
+            <% for (let userPost of post) { %>
+                <div id="post_card">
+                    <div id="post_title"> <%= userPost.postTitle %> by, <%= userPost.username %> posted
+                        on <%= userPost.posted %> </div>
+                    <div id="post_description"><%= userPost.postDescription %></div>
+                    <div id="post_images"><%= userPost.postImage %></div>
+                </div>
+            <% } %>
+        </div>
+    <% } else { %>
+        <h1>This user hasn't made any post yet</h1>
+    <% } %>
+</main>
+<%- include('../includes/end.ejs') %>

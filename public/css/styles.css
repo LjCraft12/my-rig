@@ -8,3 +8,22 @@ body {
     margin: 10px;
 }
 
+/* Navbar */
+.main_header__nav {
+    padding: 0 1rem;
+}
+
+.nav_list ul {
+
+}
+
+.nav_list__item a {
+    text-decoration: none;
+}
+
+/* End of Navbar*/
+
+#edit_profile__container {
+    margin: 0 auto;
+    width: 90vw;
+}

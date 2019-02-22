@@ -3,22 +3,40 @@
     <ul class="nav_list">
 
         <li class="nav_list__item">
+            <a href="/">Home</a>
+        </li>
+
+        <li class="nav_list__item">
             <a href="/admin/signup">Sign Up</a>
         </li>
 
         <% if (!isAuthenticated) { %>
-        <li class="nav_list__item">
-            <a href="/admin/login">Login</a>
-        </li>
+            <li class="nav_list__item">
+                <a href="/admin/login">Login</a>
+            </li>
         <% } else { %>
-        <li class="nav_list__item">
-            <a href="/admin/profile">Profile</a>
-        </li>
+            <li class="nav_list__item">
+                <a href="/admin/profile">Profile</a>
+            </li>
+
+            <li class="nav_list__item">
+                <a href="/admin/messages">Messages</a>
+            </li>
+
             <div>
                 <form action="/admin/logout" method="post">
                     <button type="submit">Logout</button>
                 </form>
             </div>
         <% } %>
+
+        <li class="nav_list__item">
+            <form action="/search" method="post">
+                <label for="search">Search</label>
+                <input type="text" name="search" id="search">
+                <input type="submit" value="Search">
+            </form>
+        </li>
+
     </ul>
 </nav>

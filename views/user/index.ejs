@@ -1,0 +1,38 @@
+<%- include('../includes/head.ejs') %>
+
+</head>
+
+<body>
+<%- include('../includes/navigation.ejs') %>
+
+<main>
+    <h1>This is the homepage</h1>
+    <% if (post.length > 0) { %>
+        <div id="post_container">
+            <% for (let userPost of post) { %>
+                <div id="post_card">
+                    <div id="post_title"> <%= userPost.postTitle %> by, <%= userPost.username %> posted
+                        on <%= userPost.posted %> </div>
+                    <div id="post_description"><%= userPost.postDescription %></div>
+                    <div id="post_images"><%= userPost.postImage %></div>
+                </div>
+            <% } %>
+        </div>
+    <% } else { %>
+        <h1> There are no post as of yet. You should add one so that someone else doesn't see this message too. Come on
+            be a sport!</h1>
+    <% } %>
+    <form action="/admin/addPost" method="post">
+        <label for="post_add__title">Title</label>
+        <input type="text" id="post_add__title" name="postTitle" class="add_post__input">
+
+        <label for="post_add__description">Description</label>
+        <input type="text" id="post_add__description" name="postDescription" class="add_post__input">
+
+        <label for="post_add__file">Title</label>
+        <input type="file" id="post_add__file" name="postImage" class="add_post__input">
+
+        <button type="submit">Add Post</button>
+    </form>
+</main>
+<%- include('../includes/end.ejs') %>
