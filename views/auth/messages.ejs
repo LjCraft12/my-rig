@@ -7,5 +7,36 @@
 
 <main>
 
+    <% if (messages.length > 0) { %>
+        <h1>Here are <%= user.username %> messages</h1>
+        <div id="post_container">
+            <% for (let msg of messages) { %>
+                <div id="message_card">
+                    <div id="message_from">From: <%= msg.fromUserId %> time: <%= msg.sent %></div>
+                    <div id="message_description"><%= msg.messageDescription %></div>
+                </div>
+            <% } %>
+        </div>
+    <% } else { %>
+        <h1>You have no messages you should make some friends</h1>
+    <% } %>
+
+    <div class="send_message">
+        <form action="/admin/message" method="post" class="message_form">
+            <div class="login_form_inputs">
+
+                <label class="label" for="receiverName">To:</label>
+                <input type="text" id="receiverName" name="receiverName" class="username_input" placeholder="JonDoe12">
+
+                <label for="message_title" class="label">Message</label>
+                <input type="text" id="message_title" name="messageTitle" class="username_input">
+
+                <label for="message" class="label">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                <input type="submit" value="Send Message" class="btn btn_submit">
+
+            </div>
+        </form>
+    </div>
 </main>
 <%- include('../includes/end.ejs') %>

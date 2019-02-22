@@ -4,7 +4,8 @@ const pageTitle = {
         signup: 'My Rig | Sign Up',
         login: 'My Rig | Login',
         profile: 'My Rig | Profile',
-        search: 'My Rig | Search'
+        search: 'My Rig | Search',
+        message: 'My Rig | Messages',
     }
 };
 

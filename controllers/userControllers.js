@@ -38,7 +38,8 @@ exports.postSearch = (req, res, next) => {
                         isAuthenticated: req.session.isLoggedIn,
                         path: '/search',
                         post: userPost,
-                        query: search
+                        query: search,
+                        user: user
                     })
 
                 })

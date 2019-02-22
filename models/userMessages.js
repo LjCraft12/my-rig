@@ -2,7 +2,11 @@ const mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 const messageSchema = new Schema({
-    userId: {
+    toUserId: {
+        type: String,
+        required: true
+    },
+    fromUserId: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
         required: true
@@ -11,7 +15,11 @@ const messageSchema = new Schema({
         type: String,
         required: true,
     },
-    message: {
+    messageDescription: {
+        type: String,
+        required: true
+    },
+    sent: {
         type: String,
         required: true
     }
